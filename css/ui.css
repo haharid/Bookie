@@ -1,0 +1,1296 @@
+/* Bookie 3.0 First Stable - UI CSS */
+:root{
+  --bookie-sage:#A8C9A2;
+  --bookie-pink:#F6AFC5;
+  --bookie-paper:#FFF8F1;
+  --bookie-ink:#2F2B2B;
+  --ui-bg:var(--bookie-paper);
+  --ui-main:var(--bookie-sage);
+  --ui-accent:var(--bookie-pink);
+  --ui-text:var(--bookie-ink);
+  --ui-soft:#EEF7EC;
+  --ui-line:#DDEBD9;
+}
+
+html,body{margin:0;padding:0;overflow-x:hidden !important;}
+body{padding:14px;background:var(--ui-bg);font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ui-text)}
+.container{max-width:760px;margin:auto}
+.card{background:white;border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+h1{text-align:center;color:var(--ui-main);margin:8px 0;font-size:34px}
+.upload{border:2px dashed var(--ui-main);padding:6px 6px 8px;border-radius:18px;text-align:center;background:#fff}
+.uploadLabel{display:block;padding:14px 14px;background:var(--ui-main);color:white;font-size:18px;font-weight:800;border-radius:18px;cursor:pointer;box-shadow:0 4px 14px rgba(168,201,162,.35)}
+button{border:none;border-radius:14px;padding:12px;font-size:15px;font-weight:800;cursor:pointer}
+.primary{width:100%;background:var(--ui-main);color:white}
+.secondary{background:white;border:2px solid var(--ui-main);color:var(--ui-main)}
+.danger{background:#fff;border:2px solid var(--ui-accent);color:#d97898}
+.topbar{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+input[type=text],.bookieInput{flex:1;padding:11px;border-radius:12px;border:1px solid var(--ui-line);min-width:0;box-sizing:border-box}
+.bookieInput{width:100%}
+select.bookieInput{background:white;color:var(--ui-text)}
+.small{font-size:13px;color:#6F7F6C}
+.autoCleanHint{margin-left:4px;color:#8A9688;font-size:12px;font-weight:400}
+.boxAddSection{
+  margin-top:14px;
+  padding:13px 14px;
+  border:1px solid var(--ui-line);
+  border-radius:14px;
+  background:#fff;
+}
+.boxAddHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+}
+.boxAddToggle{
+  display:grid;
+  place-items:center;
+  flex:0 0 28px;
+  width:28px;
+  height:28px;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:inherit;
+  text-align:left;
+  box-shadow:none;
+}
+.boxAddToggle:focus-visible{outline:2px solid var(--ui-main);outline-offset:5px;border-radius:6px}
+.boxAddHeading{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;color:var(--ui-text);cursor:pointer}
+.boxAddHeading input{margin:0;align-self:center}
+.boxAddHeadingHint{color:#8A9688;font-size:12px;font-weight:400}
+.boxAddArrow{flex:0 0 auto;color:var(--ui-main);font-size:17px;line-height:1}
+.boxAddSettings{padding-top:9px}
+.boxAddSettings[hidden]{display:none}
+.boxSettingLabel{display:block;color:#71816E;font-size:12px;font-weight:700}
+.boxAddSearchBar{display:grid;grid-template-columns:minmax(0,1fr) max-content max-content max-content;gap:7px;align-items:center;margin-top:6px}
+.boxAddSearchBar .secondary{min-height:39px;padding:8px 14px;white-space:nowrap}
+.boxRegexSearchOption{display:inline-grid;grid-template-columns:max-content max-content;align-items:center;column-gap:5px;min-height:37px;padding:0 10px;border:1px solid var(--ui-line);border-radius:10px;background:#FFF;color:#71816E;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer;box-sizing:border-box}
+.boxRegexSearchOption:has(input:checked){border-color:var(--ui-main);background:var(--ui-soft);color:#557651}
+.boxRegexSearchOption input{grid-row:1/3;margin:0}
+.boxRegexSearchOption small{color:#98A395;font-size:9px;font-weight:500}
+.boxBlankOnlyToggle{display:inline-flex;align-items:center;gap:6px;min-height:37px;padding:0 11px;border:1px solid var(--ui-line);border-radius:10px;background:#FFF;color:#71816E;font-size:11px;font-weight:800;white-space:nowrap;cursor:pointer;box-sizing:border-box}
+.boxBlankOnlyToggle:has(input:checked){border-color:var(--ui-main);background:var(--ui-soft);color:#557651}
+.boxBlankOnlyToggle input{margin:0}
+.boxSearchPanel{margin-top:9px;padding:9px;border:1px solid #D8E5D5;border-radius:12px;background:#FAFCF9}
+.boxSearchPanel[hidden]{display:none}
+.boxSearchPanelLabel{padding:1px 2px 7px;color:#60785C;font-size:12px;font-weight:800}
+.boxSearchPanelLabel span{margin-left:5px;color:#8A9688;font-size:10px;font-weight:500}
+.boxCurrentPreview{margin-top:10px;padding:10px 11px;border:1px solid #E0E9DE;border-radius:10px;background:#F8FAF7}
+.boxSettingLabel small{margin-left:5px;color:#98A395;font-size:10px;font-weight:500}
+.boxSearchResults{display:grid;gap:7px;max-height:430px;padding:6px;border:1px solid #DFE8DD;border-radius:9px;background:#FFF;overflow:auto;user-select:none;-webkit-user-select:none}
+.boxSearchResultLine{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:9px;align-items:start;width:100%;padding:9px 10px;border:1px solid #E3EBE1;border-radius:9px;background:#FFF;color:#4D574B;font-family:inherit;font-size:12px;font-weight:400;line-height:1.5;text-align:left;cursor:pointer}
+.boxSearchResultLine:hover{background:#F1F7EF}
+.boxSearchResultLine.is-selected{border-color:#BDD5B8;background:#E9F3E6;box-shadow:inset 0 0 0 1px #C9DCC5}
+.boxSearchResultNo{color:#98A395;font-size:10px;font-weight:700;white-space:nowrap}
+.boxSearchResultText{min-width:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.boxSearchEmpty{padding:18px 8px;color:#929D90;font-size:11px;text-align:center}
+.boxCurrentPreview p{margin:6px 0 0;color:#4D574B;font-size:12px;line-height:1.5;text-indent:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.boxRegexField{display:grid;gap:6px;margin-top:10px}
+.boxRegexField .bookieInput{width:100%;min-height:39px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}
+.boxPresetControls{display:grid;grid-template-columns:max-content minmax(190px,1fr);gap:12px;align-items:end;margin-top:10px}
+.boxPresetChoiceGroup{display:flex;align-items:end;gap:9px;min-width:0}
+.boxPresetField{display:grid;gap:6px;width:max-content;max-width:100%}
+.boxPresetField .bookieInput{width:auto;max-width:100%;min-height:39px;padding-top:8px;padding-bottom:8px}
+.boxDeleteControls{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:7px;align-items:end;min-width:0}
+.boxDeleteField{display:grid;gap:6px;min-width:0}
+.boxDeleteField .bookieInput{width:100%;min-width:0;min-height:39px}
+.boxDeleteButton{width:auto;min-height:39px;padding:8px 14px;white-space:nowrap}
+.boxItalicOption{display:inline-flex;align-items:center;gap:6px;min-height:39px;padding:0 3px;color:#637160;font-size:12px;font-weight:700;white-space:nowrap;cursor:pointer}
+.boxItalicOption:has(input:disabled){color:#A6AEA4;cursor:default}
+.boxItalicOption input{margin:0}
+.boxDesignerGrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:9px;margin-top:10px}
+.boxDesignerPanel{display:flex;flex-direction:column;min-width:0;min-height:205px;padding:10px;border:1px solid #DCE7DA;border-radius:11px;background:#FFF;box-sizing:border-box}
+.boxCssHelp{display:grid;gap:2px;margin-top:6px;color:#A7AEA5;font-size:9px;font-weight:400;line-height:1.4}
+.boxCssHelp span{display:block}
+.boxCssHelp code{color:inherit;font:inherit;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:700}
+.boxCssPanel textarea{flex:1;min-width:0;width:100%;min-height:160px;margin-top:7px;padding:9px;border:1px solid var(--ui-line);border-radius:9px;box-sizing:border-box;resize:vertical;background:#FBFCFA;color:#3D473B;font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+.boxCssPanel textarea:focus{outline:2px solid rgba(126,169,153,.25);border-color:var(--ui-main)}
+.boxResultCanvas{display:flex;align-items:stretch;justify-content:center;flex-direction:column;flex:1;min-height:160px;margin-top:7px;padding:12px;border:1px dashed #CAD8C7;border-radius:9px;box-sizing:border-box;background:#FAFAFA;overflow:auto}
+#boxResultExample{max-width:100%;box-sizing:border-box;color:#222;font-size:12px;overflow-wrap:anywhere}
+#boxResultParagraph{display:block;margin:.6em .1em;font-size:1em;line-height:180%;text-indent:.9em;white-space:pre-wrap;overflow-wrap:anywhere}
+.boxResultSampleLabel{margin:0 0 4px;color:#6F816C;font-size:10px;font-weight:800}
+.boxAlternativePreviews{display:grid;gap:8px;margin-top:9px;padding-top:9px;border-top:1px dashed #D7E2D5}
+.boxAlternativeSampleLabel{margin-bottom:4px;color:#8A9688;font-size:9px;font-weight:700}
+.boxAlternativeExample{max-width:100%;box-sizing:border-box;color:#222;font-size:12px;overflow-wrap:anywhere}
+.boxAlternativeExample p{display:block;margin:.6em .1em;font-size:1em;line-height:180%;text-indent:.9em;white-space:pre-wrap;overflow-wrap:anywhere}
+.boxAddActions{display:flex;justify-content:flex-end;margin-top:9px}
+.boxAddActions .secondary{min-height:36px;padding:7px 13px}
+.boxAddHint{margin:7px 1px 0;color:#8A9688;font-size:11px;line-height:1.5}
+.boxAddHint code{padding:0;background:transparent;color:inherit;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:inherit}
+.boxWrapSearchSummary{min-height:16px;margin:5px 1px 0;color:#6D8B68;font-size:11px;line-height:1.45}
+.boxWrapSearchSummary.is-error{color:#C85F7E}
+.boxCustomRuleList{display:grid;gap:7px;margin-top:8px}
+.boxRuleItem{display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:8px;align-items:start;padding:8px 9px;border:1px solid #E0E9DE;border-radius:10px;background:#F8FAF7}
+.boxRuleInfo{min-width:0}
+.boxRuleTitle{display:flex;align-items:center;gap:6px;flex-wrap:wrap;color:#536450;font-size:12px;font-weight:800}
+.boxRuleMeta{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.boxRuleMeta span{padding:2px 6px;border-radius:999px;background:#EEF4EC;color:#748471;font-size:10px;line-height:1.5}
+.boxRuleClass{padding:1px 5px;border-radius:999px;background:#E5EFE2;color:#5E7D59;font:10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+.boxRuleCss{margin:5px 0 0;color:#7B8779;font:10px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.boxRuleRemove{width:28px;height:28px;padding:0;border:1px solid var(--ui-accent);border-radius:50%;background:#FFF;color:#D97898;font-size:18px;line-height:1}
+.boxRuleEmpty{padding:10px;border:1px dashed #D9E4D7;border-radius:10px;color:#929D90;font-size:11px;text-align:center}
+@media(max-width:650px){.boxAddSearchBar{grid-template-columns:minmax(0,1fr) max-content}.boxRegexSearchOption,.boxBlankOnlyToggle{grid-column:1/-1;justify-self:start}.boxPresetControls{grid-template-columns:1fr}.boxPresetChoiceGroup{flex-wrap:wrap}.boxDeleteControls{width:100%}.boxDesignerGrid{grid-template-columns:1fr}}
+.panel{margin-top:12px;border:2px solid var(--ui-line);border-radius:16px;background:#fff;overflow:hidden}
+.panelHead{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;background:var(--ui-soft);font-weight:800;color:var(--ui-main);cursor:pointer}
+.panelBody{max-height:340px;overflow:auto;padding:8px}.panel.closed .panelBody{display:none;}
+.line{display:flex;gap:8px;padding:8px;border-bottom:1px dashed var(--ui-line);font-size:14px;transition:background .15s;-webkit-tap-highlight-color:transparent;}
+.lineNo{min-width:42px;color:#8A9A86}.lineText{flex:1;word-break:break-word}
+.selected{background:var(--ui-soft);border-radius:10px}.chapter{color:#5E8F58;font-weight:700}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--ui-soft);color:var(--ui-text);font-size:12px;font-weight:700;margin-top:8px}
+.tocItem{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px dashed var(--ui-line);font-size:14px}.tocText{flex:1}.removeToc{width:auto;padding:4px 8px;border-radius:8px;background:#fff;border:1px solid var(--ui-accent);color:#d97898;font-size:12px}
+.tocEdit{flex:1;padding:8px 10px;border-radius:10px;border:1px solid var(--ui-line);font-size:14px;min-width:0;}
+.moveBtn{width:auto;padding:5px 10px;border-radius:8px;background:#fff;border:1px solid var(--ui-line);color:#5E8F58;font-size:12px;}
+img{max-width:110px;border-radius:12px;margin-top:10px;}.progressBox{margin-top:10px;padding:10px;border-radius:12px;background:var(--ui-soft);border:1px solid var(--ui-line);font-family:monospace;color:var(--ui-text);white-space:pre-wrap}
+.upload.dragover{background:var(--ui-soft);border-color:var(--ui-main);transform:scale(1.01);}
+div.cover{text-align:center;}
+img.cover{display:block;width:100%;height:auto;margin:0 auto;}
+.line,.line *,button,button *{-webkit-tap-highlight-color: transparent;}
+.line:active{background:transparent;}
+
+/* Bookie Branding 1.0 Step1 - Identity */
+.bookieHeader{display:flex;align-items:center;justify-content:space-between;gap:14px;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fffaf5 100%);border:1px solid rgba(168,201,162,.35)}
+.brandBlock{min-width:0;flex:1}
+.brandTitleRow{display:flex;align-items:center;gap:12px}
+.brandPaw{width:74px;height:74px;object-fit:contain;margin:0;border-radius:18px;flex:0 0 auto}
+.bookieHeader h1{text-align:left;color:var(--bookie-ink);margin:0;font-size:40px;letter-spacing:.2px;line-height:1}
+.tagline{margin:6px 0 0;color:#6FA395;font-size:16px;font-weight:800;letter-spacing:.2px}
+.statusLine{margin:10px 0 0;color:#6F7F6C}
+.headerTiro{width:118px;max-width:34%;height:auto;object-fit:contain;margin:0;align-self:flex-end}
+.bookieFooter{text-align:center;border:1px solid rgba(168,201,162,.35);background:#fffdf9;color:var(--bookie-ink)}
+.footerBrand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px}
+.footerPaw{width:42px;height:42px;object-fit:contain;margin:0;border-radius:12px}
+.footerBrand strong{display:block;font-size:20px;line-height:1.1}
+.footerBrand span{display:block;font-size:12px;color:#6FA395;font-weight:700;margin-top:4px}
+.createdBy{font-size:13px;color:#7D736D;border-top:1px dashed #EADCCF;padding-top:10px;margin-top:6px}
+@media(max-width:520px){.bookieHeader{align-items:center}.brandPaw{width:58px;height:58px}.bookieHeader h1{font-size:32px}.tagline{font-size:13px}.headerTiro{width:88px}.statusLine{font-size:12px}}
+
+
+.selectedFileNames {
+  margin-top: 12px;
+  max-height: 220px;
+  overflow-y: auto;
+  text-align: left;
+  border-radius: 12px;
+}
+.selectedFileRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 7px 8px;
+  border-bottom: 1px solid rgba(168,201,162,.28);
+  background: rgba(255,255,255,.55);
+  cursor: url("../assets/cursors/grab-catpaw.png") 11 11, grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  touch-action: pan-y;
+}
+.selectedFileRow:last-child {border-bottom: 0}
+.selectedFileRow:active,
+.selectedFileRow.dragging {cursor:url("../assets/cursors/grabbing-catpaw.png") 11 11,grabbing}
+.selectedFileRow.dragging {opacity: .18}
+.selectedFileDragGhost {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1500;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid rgba(168,201,162,.55);
+  border-radius: 11px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 10px 26px rgba(75,91,70,.2);
+  opacity: .98;
+  pointer-events: none;
+  touch-action: none;
+  transition: none !important;
+  will-change: transform;
+}
+body.is-file-reordering,
+body.is-file-reordering * {cursor:url("../assets/cursors/grabbing-catpaw.png") 11 11,grabbing!important}
+.selectedFileDrag {color: #9BAA98; font-size: 13px; line-height: 1.55; user-select: none; touch-action: none}
+.selectedFileName {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.selectedFileRemove {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: transparent;
+  color: #A07C76;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.selectedFileRemove:hover,
+.selectedFileRemove:focus-visible {
+  background: #F8E7E4;
+  border-color: rgba(160,124,118,.25);
+}
+
+.coverUpload {
+  margin-top: 6px;
+  padding: 8px;
+  border: 2px dashed var(--ui-main);
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+  transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+}
+.coverUpload.dragover {
+  background: var(--ui-soft);
+  border-color: var(--ui-main);
+  transform: scale(1.01);
+}
+.coverUploadLabel {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: var(--ui-soft);
+  color: #5E8F58;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.coverFileName {
+  margin: 9px 4px 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+#coverPreview {
+  display: none;
+  width: auto;
+  max-width: 100px;
+  max-height: 140px;
+  object-fit: contain;
+  margin: 10px auto 2px;
+  cursor: zoom-in;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(74, 61, 58, .12);
+}
+
+/* Bookie 4.0 — source upload 6:4 layout */
+.sourceUploadGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 12px;
+  align-items: stretch;
+}
+.sourceUploadPanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sourceUploadHeading {
+  margin: 0 0 7px 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ui-text);
+}
+.sourceJellyIcon {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 1px 0 rgba(47,43,43,.14));
+}
+.sourceJellyIcon.jellyPink { fill: var(--bookie-pink); }
+.sourceJellyIcon.jellySage { fill: var(--bookie-sage); }
+.sourceUploadPanel .upload,
+.sourceUploadPanel .coverUpload {
+  flex: 1 1 auto;
+  min-height: 210px;
+  box-sizing: border-box;
+}
+.sourceUploadPanel .upload {
+  display: flex;
+  flex-direction: column;
+}
+.sourceUploadPanel .selectedFileNames {
+  flex: 1 1 auto;
+  max-height: 250px;
+}
+.sourceUploadPanel .coverUpload {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sourceUploadPanel .coverFileName {
+  margin-top: 12px;
+}
+.sourceUploadPanel #coverPreview {
+  max-width: 100px;
+  max-height: 140px;
+}
+@media (max-width: 640px) {
+  .sourceUploadGrid {
+    grid-template-columns: 1fr;
+  }
+  .sourceUploadPanel .upload,
+  .sourceUploadPanel .coverUpload {
+    min-height: 0;
+  }
+}
+
+
+/* Bookie 4.0.1 UI — cover thumbnail lightbox */
+.coverLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px 24px;
+  box-sizing: border-box;
+  background: rgba(31, 27, 26, .78);
+}
+.coverLightbox.open {
+  display: flex;
+}
+.coverLightbox img {
+  display: block;
+  max-width: min(90vw, 720px);
+  max-height: calc(100vh - 72px);
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, .35);
+}
+.coverLightboxClose {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #4A3D3A;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .22);
+}
+.coverLightboxClose:hover,
+.coverLightboxClose:focus-visible {
+  background: #F8E7E4;
+  outline: none;
+}
+body.coverLightboxOpen {
+  overflow: hidden;
+}
+
+/* TOC Hanja option */
+.tocOptionBox{
+  margin:0 0 14px;
+  padding:12px 14px;
+  border:1px solid #d7cfc4;
+  border-radius:12px;
+  background:#fffaf6;
+}
+.tocHanjaOption{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+}
+.tocHanjaOption input{
+  width:18px;
+  height:18px;
+  margin:0;
+  flex:0 0 auto;
+}
+.tocOptionHelp{
+  margin:6px 0 0 27px;
+  font-size:12px;
+  line-height:1.45;
+  color:#756b63;
+}
+
+/* Bookie 4.0.10 — sage capsule progress; running Tiro deferred until frame animation is ready */
+.progressBox{
+  align-items:center;
+  gap:12px;
+  min-height:76px;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  white-space:normal;
+  overflow:visible;
+}
+.progressBox .progressTiro{
+  flex:0 0 auto;
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  margin:0;
+  border-radius:0;
+}
+.progressContent{min-width:0;flex:1;width:100%;}
+.tiroProgressTrack{
+  position:relative;
+  height:18px;
+  margin:25px 2px 0;
+  overflow:visible;
+  border:1px solid rgba(126,169,153,.42);
+  border-radius:999px;
+  background:#E4EEE8;
+  box-shadow:inset 0 1px 3px rgba(67,91,79,.10);
+}
+.tiroProgressFill{
+  position:absolute;
+  inset:0 auto 0 0;
+  min-width:0;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#B7D1C5,#7EA999);
+  transition:width .28s ease;
+}
+.tiroProgressPercent{
+  position:absolute;
+  z-index:3;
+  top:50%;
+  right:9px;
+  transform:translateY(-50%);
+  font-size:11px;
+  line-height:1;
+  font-weight:900;
+  color:#425F54;
+  text-shadow:0 1px rgba(255,255,255,.72);
+}
+.progressStatusText{
+  margin-top:8px;
+  font-size:13px;
+  font-weight:700;
+  color:#6F7F6C;
+  text-align:center;
+}
+.progressComplete{background:#fffaf7;border-color:rgba(246,175,197,.55);}
+.progressComplete .tiroProgressTrack{margin-top:8px;}
+.progressCompleteTitle{font-size:18px;font-weight:900;color:var(--ui-text);margin-bottom:4px;}
+.tiroProgressDone .tiroProgressFill{background:linear-gradient(90deg,#B7D1C5,#7EA999);}
+@media(prefers-reduced-motion:reduce){
+  .tiroProgressFill{transition:none;}
+}
+@media(max-width:420px){
+  .progressBox .progressTiro{width:62px;height:62px;}
+  .progressCompleteTitle{font-size:16px;}
+}
+
+
+/* Bookie 4.0.11 — clearer completion Tiro chosen by the project owner */
+.progressComplete .progressTiro{
+  width:96px;
+  height:96px;
+  border-radius:18px;
+  box-shadow:0 5px 14px rgba(54,38,28,.16);
+}
+@media(max-width:420px){
+  .progressComplete .progressTiro{width:82px;height:82px;border-radius:15px;}
+}
+
+/* Bookie 4.0.12 — real running Tiro: animated limbs, body and tail */
+.progressWorking .runningTiro{
+  flex:0 0 auto;
+  width:88px;
+  height:68px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:visible;
+}
+.runningTiroSvg{width:88px;height:62px;overflow:visible;filter:drop-shadow(0 4px 4px rgba(52,44,39,.13));}
+.runningTiroBody{transform-origin:60px 45px;animation:tiroRunBounce .42s ease-in-out infinite alternate;}
+.runningTiroTail{transform-origin:91px 45px;animation:tiroTailRun .34s ease-in-out infinite alternate;}
+.runningLeg{transform-box:fill-box;transform-origin:50% 8%;}
+.runningLegFront{animation:tiroLegFront .34s ease-in-out infinite alternate;}
+.runningLegBack{animation:tiroLegBack .34s ease-in-out infinite alternate;}
+@keyframes tiroRunBounce{from{transform:translateY(1px) rotate(-1deg)}to{transform:translateY(-4px) rotate(1deg)}}
+@keyframes tiroTailRun{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+@keyframes tiroLegFront{from{transform:rotate(28deg) translateY(-1px)}to{transform:rotate(-24deg) translateY(1px)}}
+@keyframes tiroLegBack{from{transform:rotate(-24deg) translateY(1px)}to{transform:rotate(28deg) translateY(-1px)}}
+@media(max-width:420px){
+  .progressWorking .runningTiro{width:72px;height:58px;}
+  .runningTiroSvg{width:72px;height:52px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .runningTiroBody,.runningTiroTail,.runningLegFront,.runningLegBack{animation:none;}
+}
+
+/* Completion art uses a transparent asset so it blends with the card. */
+.progressComplete .progressTiro{box-shadow:none;background:transparent;}
+
+
+/* Bookie 4.0.13 — six-frame Tiro sprite runs directly above the progress bar */
+.progressWorking{display:block;}
+.progressWorking .progressContent{width:100%;}
+.progressWorking .tiroProgressTrack{margin-top:64px;}
+.progressWorking .runningTiroSprite{
+  position:absolute;
+  z-index:5;
+  left:calc((100% - 88px) * (var(--progress, 0) / 100));
+  bottom:12px;
+  width:88px;
+  height:60px;
+  margin:0;
+  background-image:url('../assets/tiro/run_strip.png');
+  background-repeat:no-repeat;
+  background-size:528px 60px;
+  background-position:0 0;
+  filter:drop-shadow(0 3px 3px rgba(54,44,38,.16));
+  animation:tiroRunFrames .62s steps(6) infinite;
+  transition:left .28s ease;
+  pointer-events:none;
+}
+@keyframes tiroRunFrames{
+  from{background-position-x:0;}
+  to{background-position-x:-528px;}
+}
+.progressComplete .progressTiro{
+  background:transparent;
+  box-shadow:none;
+  border-radius:0;
+}
+@media(max-width:420px){
+  .progressWorking .tiroProgressTrack{margin-top:54px;}
+  .progressWorking .runningTiroSprite{
+    left:calc((100% - 72px) * (var(--progress, 0) / 100));
+    bottom:11px;
+    width:72px;
+    height:49px;
+    background-size:432px 49px;
+  }
+  @keyframes tiroRunFrames{
+    from{background-position-x:0;}
+    to{background-position-x:-432px;}
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .progressWorking .runningTiroSprite{animation:none;transition:none;}
+}
+
+
+/* Bookie 4.0.18 — edge-balanced sage paw-jellies with light center overlap */
+html{background:var(--ui-bg);}
+body{position:relative;isolation:isolate;background:transparent;}
+.container{position:relative;z-index:1;}
+.pagePawLayer{
+  position:fixed;
+  z-index:0;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  opacity:1;
+}
+.pagePawLayer .progressPaw{
+  --paw-left:50%;
+  --paw-top:50%;
+  --paw-size:18px;
+  --paw-duration:8s;
+  --paw-delay:0s;
+  --paw-rotate:0deg;
+  position:absolute;
+  left:var(--paw-left);
+  top:var(--paw-top);
+  width:var(--paw-size);
+  height:calc(var(--paw-size) * .78);
+  opacity:.34;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.7));
+  transform:translate(-50%,-50%) rotate(var(--paw-rotate));
+  animation:progressPawFloat var(--paw-duration) ease-in-out var(--paw-delay) infinite alternate;
+}
+.pagePawLayer .progressPaw::before{
+  content:"";
+  position:absolute;
+  left:38%;
+  top:0;
+  width:24%;
+  height:28%;
+  border-radius:55% 55% 48% 48%;
+  background:#78A38F;
+  box-shadow:
+    calc(var(--paw-size) * -.27) calc(var(--paw-size) * .08) 0 calc(var(--paw-size) * -.015) #78A38F,
+    calc(var(--paw-size) * .27) calc(var(--paw-size) * .08) 0 calc(var(--paw-size) * -.015) #78A38F,
+    calc(var(--paw-size) * -.43) calc(var(--paw-size) * .27) 0 calc(var(--paw-size) * -.035) #78A38F,
+    calc(var(--paw-size) * .43) calc(var(--paw-size) * .27) 0 calc(var(--paw-size) * -.035) #78A38F;
+}
+.pagePawLayer .progressPaw::after{
+  content:"";
+  position:absolute;
+  left:20%;
+  bottom:0;
+  width:60%;
+  height:52%;
+  border-radius:52% 52% 58% 58%;
+  background:#78A38F;
+}
+@keyframes progressPawFloat{
+  from{transform:translate(-50%,-50%) translate3d(-5px,6px,0) rotate(calc(var(--paw-rotate) - 4deg));opacity:.24;}
+  to{transform:translate(-50%,-50%) translate3d(6px,-10px,0) rotate(calc(var(--paw-rotate) + 4deg));opacity:.46;}
+}
+@media(prefers-reduced-motion:reduce){
+  .pagePawLayer .progressPaw{animation:none;opacity:.34;}
+}
+
+
+
+/* Bookie 4.0.22 — random blink/wink mix; wink-only heart */
+.headerTiroBuddy{
+  position:relative;
+  width:118px;
+  max-width:34%;
+  flex:0 0 auto;
+  align-self:flex-end;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  cursor:default;
+  isolation:isolate;
+}
+.headerTiroBuddy .headerTiro{
+  width:100%;
+  max-width:none;
+  height:auto;
+  margin:0;
+  display:block;
+  transform-origin:50% 92%;
+  transition:transform .22s ease;
+}
+.headerTiroEyelid{
+  position:absolute;
+  z-index:2;
+  top:28.4%;
+  width:12.2%;
+  height:17.2%;
+  border-radius:48% 48% 52% 52%;
+  background:#111214;
+  opacity:0;
+  pointer-events:none;
+}
+.headerTiroEyelid::after{
+  content:"";
+  position:absolute;
+  left:16%;
+  right:16%;
+  top:47%;
+  height:27%;
+  border-bottom:2px solid rgba(105,100,100,.92);
+  border-radius:0 0 50% 50%;
+}
+.headerTiroEyelidLeft{left:26.45%;}
+.headerTiroEyelidRight{left:45.15%;}
+.headerTiroBuddy.is-blinking .headerTiroEyelid,
+.headerTiroBuddy.is-winking-left .headerTiroEyelidLeft,
+.headerTiroBuddy.is-winking-right .headerTiroEyelidRight{opacity:1;}
+.headerTiroBuddy.is-waving .headerTiro{
+  animation:headerTiroGreeting .72s ease-in-out both;
+}
+.headerTiroHeart{
+  position:absolute;
+  top:2px;
+  right:0;
+  z-index:3;
+  color:#d97898;
+  font-size:25px;
+  line-height:1;
+  opacity:0;
+  transform:translate(2px,8px) scale(.45) rotate(10deg);
+  pointer-events:none;
+  text-shadow:0 2px 0 rgba(255,255,255,.9);
+}
+.headerTiroBuddy.is-waving .headerTiroHeart,
+.headerTiroBuddy.is-wink-heart .headerTiroHeart{
+  animation:headerTiroHeartPop .72s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes headerTiroGreeting{
+  0%,100%{transform:translateY(0) rotate(0) scale(1)}
+  28%{transform:translateY(-3px) rotate(-2.2deg) scale(1.025)}
+  56%{transform:translateY(-1px) rotate(1.5deg) scale(1.018)}
+}
+@keyframes headerTiroHeartPop{
+  0%{opacity:0;transform:translate(2px,9px) scale(.35) rotate(12deg)}
+  38%{opacity:1;transform:translate(-2px,-2px) scale(1.12) rotate(-7deg)}
+  72%{opacity:1;transform:translate(-4px,-7px) scale(.94) rotate(4deg)}
+  100%{opacity:0;transform:translate(-6px,-14px) scale(.72) rotate(-3deg)}
+}
+@media(max-width:520px){
+  .headerTiroBuddy{width:88px;max-width:34%}
+  .headerTiroHeart{font-size:20px;right:-2px}
+}
+@media(prefers-reduced-motion:reduce){
+  .headerTiroBuddy .headerTiro,.headerTiroEyelid{transition:none}
+  .headerTiroBuddy.is-waving .headerTiro{animation:none}
+  .headerTiroBuddy.is-waving .headerTiroHeart{animation:none;opacity:1;transform:none}
+}
+
+
+/* Bookie 4.0 UI — reset action in the upload heading */
+.sourceHeadingReset {
+  margin-left: auto;
+  padding: 4px 2px 4px 8px;
+  border: 0;
+  background: transparent;
+  color: #789071;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .16s ease, transform .16s ease;
+}
+.sourceHeadingReset:hover,
+.sourceHeadingReset:focus-visible {
+  color: #536d50;
+  outline: none;
+  transform: translateY(-1px);
+}
+.sourceHeadingReset:active {
+  transform: translateY(0);
+}
+
+
+/* Bookie 4.0 UI — Tiro reset confirmation */
+.bookieConfirmBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(48, 57, 46, .42);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+.bookieConfirmBackdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.bookieConfirmDialog {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 24px 30px 20px;
+  overflow: hidden;
+  border: 2px solid #9eb696;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fffdf8 0%, #fffaf1 100%);
+  box-shadow: 0 24px 65px rgba(45, 60, 42, .3);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(12px) scale(.94);
+  transition: transform .22s cubic-bezier(.2,.85,.3,1.15), opacity .18s ease;
+}
+.bookieConfirmBackdrop.is-open .bookieConfirmDialog {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.bookieConfirmClose {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #789071;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 34px;
+  cursor: pointer;
+  transition: background .16s ease, transform .16s ease;
+}
+.bookieConfirmClose:hover,
+.bookieConfirmClose:focus-visible {
+  background: #edf3e9;
+  outline: none;
+  transform: rotate(4deg) scale(1.04);
+}
+.bookieConfirmTiro {
+  display: block;
+  width: min(112%, 365px);
+  height: 220px;
+  margin: -18px auto -4px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 8px 8px rgba(85, 96, 73, .12));
+  animation: bookieTiroFloat 3.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+@keyframes bookieTiroFloat {
+  0%, 100% { transform: translateY(0) scale(1.7); }
+  50% { transform: translateY(-3px) scale(1.7); }
+}
+.bookieConfirmDialog h2 {
+  margin: 0;
+  color: #604a35;
+  font-size: 25px;
+  line-height: 1.35;
+  letter-spacing: -.03em;
+}
+.bookieConfirmDialog h2 span {
+  color: #78956f;
+  font-size: .78em;
+}
+.bookieConfirmDialog > p:not(.bookieConfirmWarning) {
+  margin: 12px 0 16px;
+  color: #695845;
+  font-size: 15px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.bookieConfirmDivider {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 16px;
+  color: #c8b99e;
+  font-size: 14px;
+}
+.bookieConfirmDivider::before,
+.bookieConfirmDivider::after {
+  content: "";
+  flex: 1;
+  border-top: 2px dashed #e0d6c3;
+}
+.bookieConfirmActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.bookieConfirmButton {
+  min-height: 52px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+.bookieConfirmCancel {
+  border: 2px solid #afad93;
+  background: #fffdf8;
+  color: #66543e;
+}
+.bookieConfirmCancel:hover,
+.bookieConfirmCancel:focus-visible {
+  background: #fafafa;
+  border-color: #94987e;
+  outline: none;
+  transform: translateY(-1px);
+}
+.bookieConfirmOk {
+  border: 2px solid #8da679;
+  background: #91aa78;
+  color: #fff;
+  box-shadow: 0 7px 16px rgba(99, 127, 79, .24);
+}
+.bookieConfirmOk:hover,
+.bookieConfirmOk:focus-visible {
+  background: #829d6b;
+  border-color: #829d6b;
+  outline: none;
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 9px 20px rgba(99, 127, 79, .3);
+}
+.bookieConfirmWarning {
+  margin: 14px 0 0 !important;
+  color: #8a806f !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+.bookieConfirmWarning span { color: #8da679; }
+body.has-bookie-modal { overflow: hidden; }
+@media (max-width: 420px) {
+  .bookieConfirmBackdrop { padding: 15px; }
+  .bookieConfirmDialog { padding: 20px 18px 18px; border-radius: 24px; }
+  .bookieConfirmTiro { width: min(112%, 310px); height: 190px; margin: -14px auto -4px; }
+  .bookieConfirmDialog h2 { font-size: 22px; }
+  .bookieConfirmDialog > p:not(.bookieConfirmWarning) { font-size: 14px; }
+  .bookieConfirmButton { min-height: 48px; font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bookieConfirmBackdrop,
+  .bookieConfirmDialog,
+  .bookieConfirmButton,
+  .bookieConfirmClose { transition: none; }
+  .bookieConfirmTiro { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bookieConfirmBackdrop, .bookieConfirmDialog { transition: none; }
+}
+
+/* Bookie 4.0.32 — editable per-book front preview */
+.frontBookTabs{display:flex;gap:7px;overflow-x:auto;padding:2px 2px 9px;margin-bottom:3px;border-bottom:1px solid var(--ui-line);scrollbar-width:thin;}
+.frontBookTab{flex:0 0 auto;width:auto;max-width:210px;padding:8px 13px;font-weight:400;border:1px solid var(--ui-line);border-bottom:3px solid transparent;border-radius:13px 13px 6px 6px;background:#fff;color:#71836f;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:none;}
+.frontBookTab.active{background:var(--ui-soft);border-color:var(--ui-main);border-bottom-color:var(--ui-main);color:#527b4e;}
+.frontLineList{min-width:0;}
+.editableFrontLine{align-items:center;cursor:default;}
+.editableFrontLine:hover{background:#fffafc;border-radius:10px;}
+.frontLineRemove{flex:0 0 auto;width:28px;height:28px;padding:0;border-radius:50%;border:1px solid var(--ui-accent);background:#fff;color:#d97898;font-size:19px;line-height:1;box-shadow:none;}
+.frontLineRemove:hover{background:#fff0f5;}
+.frontPreviewEmpty{padding:28px 12px;text-align:center;color:#8a9987;font-size:14px;}
+@media(max-width:520px){.frontBookTab{max-width:155px;padding:7px 10px}.frontLineRemove{width:26px;height:26px}.editableFrontLine{gap:6px;padding:7px 4px}.editableFrontLine .lineNo{min-width:38px}}
+
+/* Bookie 4.0.36 — search lines across all books before deleting */
+.deleteSearchBlock{margin-top:14px;padding-top:13px;border-top:1px solid var(--ui-line);}
+.deleteSearchBar{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:8px;align-items:center;}
+.deleteSearchBar .bookieInput{width:100%;min-width:0;}
+.deleteSearchBar button{white-space:nowrap;}
+.deleteSearchSummary{min-height:20px;margin-top:8px;color:#778675;font-size:13px;}
+.deleteSearchResults{margin-top:8px;max-height:340px;overflow:auto;border:1px solid var(--ui-line);border-radius:14px;background:#fff;padding:8px;}
+.deleteSearchBookGroup+.deleteSearchBookGroup{margin-top:9px;padding-top:9px;border-top:1px solid var(--ui-line);}
+.deleteSearchBookTitle{padding:3px 7px 7px;color:#60765d;font-size:13px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.deleteSearchRow{display:grid;grid-template-columns:42px minmax(0,1fr) 28px;gap:8px;align-items:center;padding:7px 6px;border-radius:9px;cursor:default;}
+.deleteSearchRow:hover{background:#fffafc;}
+.deleteSearchRow.selected{background:var(--ui-soft);box-shadow:inset 0 0 0 1px #c9dcc5;}
+.deleteSearchLineNo{color:#98a494;font-size:12px;text-align:right;}
+.deleteSearchLineText{min-width:0;color:#465044;font-size:14px;line-height:1.45;overflow-wrap:anywhere;white-space:pre-wrap;}
+.deleteSearchHit{font-weight:900;color:inherit;}
+.deleteSearchRemove{width:28px;height:28px;padding:0;border-radius:50%;border:1px solid var(--ui-accent);background:#fff;color:#d97898;font-size:19px;line-height:1;box-shadow:none;}
+.deleteSearchRemove:hover{background:#fff0f5;}
+.deleteSearchEmpty{padding:20px 10px;text-align:center;color:#8a9987;font-size:14px;}
+@media(max-width:620px){.deleteSearchBar{grid-template-columns:minmax(0,1fr) auto}.deleteSearchBar #deleteSearchTextButton,.deleteSearchBar #deleteSearchLinesButton{width:100%}.deleteSearchRow{grid-template-columns:34px minmax(0,1fr) 26px;gap:6px}.deleteSearchRemove{width:26px;height:26px}}
+.autoTocRerunHint{margin:7px 2px 0;color:#71836f;font-size:12px;line-height:1.45;}
+.gameModeSection {
+  margin-top: 18px;
+  padding: 12px 14px 14px;
+  border: 1px solid #dde8da;
+  border-radius: 16px;
+  background: #f3f7f1;
+}
+
+.gameModeSection:not(.is-open) {
+  margin-top: 14px;
+  padding: 13px 14px;
+  border-radius: 14px;
+}
+
+.gameModeSection:not(.is-open) .gameModeMain {
+  min-height: 28px;
+  padding: 0;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.gameModeMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 42px;
+  padding: 0 2px;
+  cursor: pointer;
+}
+
+.gameModeTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #42543f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.gameModeToggleHint {
+  color: #8b9988;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.gameModeSettings {
+  margin-top: 9px;
+  padding: 13px;
+  border: 1px solid #dbe7d9;
+  border-radius: 14px;
+  background: #fbfdfb;
+}
+
+.gameModeSettings[hidden] {
+  display: none;
+}
+
+.gameModeBrackets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 13px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e4ece2;
+}
+
+.gameModeBrackets label {
+  cursor: pointer;
+}
+
+.gameSettingLabel {
+  color: #71816e;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gameDefaultRules {
+  margin-top: 12px;
+}
+
+.gameDefaultRulesPreview {
+  margin-top: 7px;
+  padding: 10px 11px;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.gameDefaultRulesPreview .gameRulePreviewLine {
+  margin: 0.28em 0;
+  font-size: 12px;
+  line-height: 1.45;
+  text-indent: 0;
+  letter-spacing: 0;
+}
+
+.gameDefaultRulesPreview .gameRuleExample {
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  margin-bottom:8px;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,.24);
+}
+
+.gameRuleExampleLabel {
+  flex:0 0 auto;
+  padding:1px 5px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  color:#D5DDD3;
+  font-size:9px;
+  font-weight:700;
+  line-height:1.4;
+}
+
+.gameRuleEditor,
+.gameCustomRuleListBlock {
+  margin-top: 13px;
+  padding-top: 13px;
+  border-top: 1px solid #e4ece2;
+}
+
+.gameRuleInlineFields {
+  display: grid;
+  grid-template-columns: minmax(270px, 320px) 108px max-content;
+  gap: 7px;
+  align-items: end;
+  justify-content: start;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.gameRuleField {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.gameRuleField .bookieInput {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.gameRuleColorField .bookieInput {
+  padding-left: 8px;
+  padding-right: 24px;
+}
+
+.gameCustomColorPopover {
+  position: fixed;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 235px;
+  max-width: calc(100vw - 16px);
+  min-height: 43px;
+  margin: 0;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  border: 1px solid #bfd0bb;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(68,86,64,0.2);
+}
+
+.gameCustomColorPopover[hidden] {
+  display: none;
+}
+
+.gameCustomColorTitle {
+  color: #71816e;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.gameCustomColorPopover input[type="color"] {
+  width: 36px;
+  height: 31px;
+  padding: 2px;
+  border: 1px solid #cbd9c8;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.gameCustomColorPopover output {
+  color: #6f7c6c;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.gameCustomColorConfirm {
+  min-height: 29px;
+  margin: 0;
+  padding: 3px 8px;
+  border-radius: 7px;
+  font-size: 11px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.gameAddRuleButton {
+  margin: 0;
+  min-height: 39px;
+  padding-left: 12px;
+  padding-right: 12px;
+  white-space: nowrap;
+}
+
+.gameContentWildcardHint,
+.gameRuleMessage {
+  margin: 7px 1px 0;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.gameContentWildcardHint {
+  color: #929d90;
+}
+
+.gameContentWildcardHint code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.gameRuleMessage {
+  min-height: 16px;
+  color: #6d8b68;
+}
+
+.gameRuleMessage.is-error {
+  color: #c85f7e;
+}
+
+.gameCustomRuleList {
+  display: grid;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.gameCustomRulePreview {
+  padding: 9px 10px;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.gameCustomRuleItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  gap: 8px;
+  align-items: center;
+  min-height: 34px;
+  padding: 3px 2px 3px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.13);
+}
+
+.gameCustomRuleItem:last-child {
+  border-bottom: 0;
+}
+
+.gameRulePreviewText {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.gameRuleRemove {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid var(--ui-accent);
+  border-radius: 50%;
+  background: #fff;
+  color: #d97898;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: none;
+}
+
+.gameRuleRemove:hover {
+  background: #fff0f5;
+}
+
+.gameRuleEmpty {
+  padding: 12px 8px;
+  border: 1px dashed rgba(255,255,255,0.24);
+  border-radius: 10px;
+  color: #c3cbc1;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media(max-width:520px){
+  .gameModeMain{align-items:flex-start;flex-direction:column;gap:3px}
+  .gameRuleInlineFields{grid-template-columns:250px 92px max-content;gap:5px}
+  .gameRuleInlineFields .bookieInput{padding-left:7px;padding-right:7px;font-size:12px}
+  .gameRuleColorField .bookieInput{padding-right:20px}
+  .gameCustomColorPopover{padding-left:6px;padding-right:6px;gap:5px}
+  .gameCustomColorPopover output{font-size:10px}
+  .gameAddRuleButton{padding-left:8px;padding-right:8px;font-size:12px}
+}
