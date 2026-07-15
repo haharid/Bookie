@@ -30,7 +30,7 @@ select.bookieInput{background:white;color:var(--ui-text)}
 .small{font-size:13px;color:#6F7F6C}
 .autoCleanHint{margin-left:4px;color:#8A9688;font-size:12px;font-weight:400}
 .fontSection,.paragraphBreakSection{margin:8px 0 0;border:1px solid var(--ui-line);border-radius:12px;background:#FFF;overflow:hidden}
-.fontToggle,.paragraphBreakToggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:9px 11px;border:0;border-radius:0;background:#FFF;color:#5C6C59;font-size:13px;text-align:left;box-shadow:none}
+.fontToggle,.paragraphBreakToggle{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:9px 11px;border:0;border-radius:0;background:var(--ui-soft);color:#5C6C59;font-size:13px;text-align:left;box-shadow:none}
 .fontToggle[aria-expanded="true"],.paragraphBreakToggle[aria-expanded="true"]{background:var(--ui-soft)}
 .fontToggle small,.paragraphBreakToggle small{color:#8A9688;font-size:11px;font-weight:400}
 .fontToggle:focus-visible,.paragraphBreakToggle:focus-visible{outline:2px solid var(--ui-main);outline-offset:-3px}
@@ -102,7 +102,7 @@ select.bookieInput{background:white;color:var(--ui-text)}
   width:100%;
   padding:9px 11px;
   box-sizing:border-box;
-  background:#FFF;
+  background:var(--ui-soft);
   cursor:pointer;
 }
 .boxAddSection.is-open .boxAddHeader{background:var(--ui-soft)}
@@ -335,7 +335,7 @@ body.is-file-reordering * {cursor:url("../assets/cursors/grabbing-catpaw.png") 1
   transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
 }
 .coverUpload.dragover {
-  background: var(--ui-soft);
+  background: #FFF;
   border-color: var(--ui-main);
   transform: scale(1.01);
 }
@@ -1077,7 +1077,7 @@ body.has-bookie-modal { overflow: hidden; }
   gap: 10px;
   min-height: 0;
   padding: 9px 11px;
-  background: #FFF;
+  background: var(--ui-soft);
   cursor: pointer;
 }
 
