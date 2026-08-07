@@ -19,10 +19,29 @@ h2 {
   text-indent: 0;
   text-align: center;
 }
+
+
 a {
   text-decoration: none;
   color: #000;
 }
+
+
+  .linememo {
+    width: 82%;
+    margin: 1.2em auto;
+    padding: 0.6em 1em;
+    background-color: #fffdf3;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 1.95em, #d8d8d8 1.95em, #d8d8d8 2em);
+    border: 1px solid #d6c98a;
+    text-align: left;
+    text-indent: 0;
+    line-height: 2em;
+  }
+  .linememo p {
+    margin: 0;
+    text-indent: 0;
+  }
 
 .fb {
   font-size: 1em;
@@ -507,6 +526,83 @@ a {
   margin-top: 10px;
   font-size: 0.9em;
   color: #333;
+}
+
+/* ===== 카카오톡 답장 ===== */
+
+.krbubble {
+  padding: 0;
+  min-width: 55%;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* 답장 대상 원문 영역 */
+.kreply {
+  padding: 0.55em 0.75em 0.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: left;
+  text-indent: 0;
+  line-height: 1.4;
+  box-sizing: border-box;
+
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* 누구에게 답장 */
+.kreply-name {
+  margin: 0 0 0.25em 0;
+  padding: 0;
+  font-size: 0.75em;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #6f6f6f;
+  text-align: left;
+  text-indent: 0;
+}
+
+/* 원래 메시지 */
+.kreply-text {
+  margin: 0;
+  padding: 0;
+  font-size: 0.82em;
+  line-height: 1.4;
+  color: #777;
+  text-align: left;
+  text-indent: 0;
+  font-weight: normal;
+}
+
+/* 실제로 보낸 답장 */
+.kreply-answer {
+  margin: 0;
+  padding: 0.6em 0.75em;
+  font-size: 1em;
+  line-height: 1.5;
+  color: inherit;
+  text-align: left;
+  text-indent: 0;
+}
+
+/* 상대방 답장 - 흰 말풍선 */
+.kleft .krbubble .kreply {
+  background-color: #f3f3f3;
+  border-radius: 0 12px 0 0;
+}
+
+/* 내가 보낸 답장 - 노란 말풍선 */
+.kright .krbubble .kreply {
+  background-color: rgba(255, 255, 255, 0.32);
+  border-radius: 12px 0 0 0;
+}
+
+.kright .krbubble .kreply-name {
+  color: #746600;
+}
+
+.kright .krbubble .kreply-text {
+  color: #665f32;
 }
 
 /* 게시판 */

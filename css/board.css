@@ -445,7 +445,7 @@
 /* 새시스템 */    
 /* 공통 박스 */
 .ffl {
-	margin: 0.5em;
+	margin: 1em 0.5em;
 	padding: 0.32em;
 	border: 0.16em solid;
 	border-radius: 1.15em;
@@ -453,30 +453,7 @@
 	font-size: 1em;
 }
 
-/* 빨간 글씨 ON */
-.ffl-r .ffl-i,
-.ffl-r .ffl-t,
-.ffl-r .ffl-i p {
-	color: #d60000 !important;
-}
-
-/* 볼드 ON */
-.ffl-bd .ffl-i,
-.ffl-bd .ffl-t,
-.ffl-bd .ffl-i p {
-	font-weight: bold !important;
-}
-
-/* 빨간색 + 볼드 ON */
-.ffl-rb .ffl-i,
-.ffl-rb .ffl-t,
-.ffl-rb .ffl-i p {
-	color: #d60000 !important;
-	font-weight: bold !important;
-}
-
-
-/* 내부 흰색 영역 */
+/* 내부 영역 */
 .ffl-i {
 	padding: 0.4em 0.5em;
 	background-color: #fafafa;
@@ -485,6 +462,7 @@
 	text-align: center;
 }
 
+/* 제목 */
 .ffl-t {
 	display: block;
 	margin: 0 0 0.3em 0;
@@ -550,4 +528,67 @@
 .ffl-y .ffl-t {
 	background-color: #faedb9;
 	color: #a2740e;
-}    
+}
+
+/* 빨간색 */
+.ffl-r .ffl-i,
+.ffl-r .ffl-t,
+.ffl-r .ffl-i p {
+	color: #d60000 !important;
+}
+
+/* 볼드 */
+.ffl-bd .ffl-i,
+.ffl-bd .ffl-t,
+.ffl-bd .ffl-i p {
+	font-weight: bold !important;
+}
+
+/* 빨간색 + 볼드 */
+.ffl-rb .ffl-i,
+.ffl-rb .ffl-t,
+.ffl-rb .ffl-i p {
+	color: #d60000 !important;
+	font-weight: bold !important;
+}
+
+/* 하늘색 글자 그림자 */
+.ffl-s .ffl-i,
+.ffl-s .ffl-t,
+.ffl-s .ffl-i p {
+	text-shadow: -0.07em 0.03em 0 #55d9ee !important;
+}
+
+/* ffl 전용 계속 진동 */
+@keyframes fflVibrate {
+	0%,
+	90%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	10%,
+	50% {
+		transform: translate(-1.2px, 1px);
+	}
+
+	20%,
+	60% {
+		transform: translate(1.2px, -1px);
+	}
+
+	30%,
+	70% {
+		transform: translate(-1px, 0.8px);
+	}
+
+	40%,
+	80% {
+		transform: translate(1px, -0.8px);
+	}
+}
+
+.ffl.ffl-v {
+	animation: fflVibrate 0.3s infinite;
+}
+
