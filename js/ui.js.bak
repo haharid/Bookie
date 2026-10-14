@@ -1,0 +1,120 @@
+// Bookie Step 8 - UI helpers
+function log(t){
+  const l=document.getElementById("log");
+  if(!l) return;
+  l.textContent += t + "\n";
+  l.scrollTop = 999999;
+}
+
+function setProgress(done,total,msg){
+  const box=document.getElementById("progressBox");
+  if(!box) return;
+  box.style.display="block";
+  const pct=total ? Math.floor((done/total)*100) : 0;
+  const filled=Math.max(0,Math.min(10,Math.round(pct/10)));
+  const bar="█".repeat(filled)+"░".repeat(10-filled);
+  box.textContent=`${bar} ${pct}%\n${done} / ${total} ${msg||"처리 중..."}`;
+}
+
+function finishProgress(){
+  const box=document.getElementById("progressBox");
+  if(!box) return;
+  box.style.display="block";
+  box.textContent="██████████ 100%\n완료!";
+}
+
+function clearProgress(){
+  const box=document.getElementById("progressBox");
+  if(!box) return;
+  box.textContent="";
+  box.style.display="none";
+}
+
+function clearLog(){
+  const l=document.getElementById("log");
+  if(l) l.textContent="";
+}
+
+function togglePanel(id){
+  const p=document.getElementById(id);
+  if(!p) return;
+  p.classList.toggle("closed");
+  const arrow=document.getElementById(id==="frontPanel"?"frontArrow":"tocArrow");
+  if(arrow) arrow.textContent=p.classList.contains("closed")?"▸":"▾";
+  if(id==="tocPanel"&&!p.classList.contains("closed")&&typeof renderToc === "function") renderToc();
+}
+
+function closePanel(id){
+  const p=document.getElementById(id);
+  if(p) p.classList.add("closed");
+  const arrow=document.getElementById(id==="frontPanel"?"frontArrow":"tocArrow");
+  if(arrow) arrow.textContent="▸";
+}
+
+function openPanel(id){
+  const p=document.getElementById(id);
+  if(p) p.classList.remove("closed");
+  const arrow=document.getElementById(id==="frontPanel"?"frontArrow":"tocArrow");
+  if(arrow) arrow.textContent="▾";
+}
+
+function updateCount(){
+  const b=document.getElementById("countBadge");
+  if(!b) return;
+  if(!selectedIndexes.length){
+    b.style.display="none";
+    return;
+  }
+  b.style.display="inline-block";
+  b.textContent="선택된 목차 "+selectedIndexes.length+"개";
+}
+
+
+// Bookie 4.0.1 UI — cover double-click preview
+(function initCoverLightbox(){
+  const preview=document.getElementById("coverPreview");
+  const lightbox=document.getElementById("coverLightbox");
+  const lightboxImage=document.getElementById("coverLightboxImage");
+  const closeButton=document.getElementById("coverLightboxClose");
+  if(!preview || !lightbox || !lightboxImage || !closeButton) return;
+
+  function openCoverLightbox(){
+    const src=preview.getAttribute("src");
+    if(!src) return;
+    lightboxImage.src=src;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("coverLightboxOpen");
+    closeButton.focus();
+  }
+
+  function closeCoverLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("coverLightboxOpen");
+    lightboxImage.removeAttribute("src");
+  }
+
+  preview.addEventListener("dblclick", openCoverLightbox);
+  closeButton.addEventListener("click", closeCoverLightbox);
+  lightbox.addEventListener("click", event=>{
+    if(event.target===lightbox) closeCoverLightbox();
+  });
+  document.addEventListener("keydown", event=>{
+    if(event.key==="Escape" && lightbox.classList.contains("open")){
+      closeCoverLightbox();
+    }
+  });
+})();
+
+// Bookie 4.0.7 UI — run chapter search with Enter
+(function initChapterPatternEnterSearch(){
+  const input=document.getElementById("chapterPattern");
+  if(!input) return;
+
+  input.addEventListener("keydown", event=>{
+    if(event.key!=="Enter" || event.isComposing) return;
+    event.preventDefault();
+    if(typeof applyPattern==="function") applyPattern();
+  });
+})();
