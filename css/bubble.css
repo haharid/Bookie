@@ -1,0 +1,149 @@
+@charset "utf-8";
+/* Styles for 최애와 한 달 살기 참고 */
+.box_bu {
+	border: 2px solid #BF9CF2;
+	border-radius: 8px;
+	padding: 0.5em 0;
+	background-color: #ffffff;
+}
+
+.bu_arti {
+	border-bottom: 1px solid #bcbcbc;
+	border-radius: 0 0 5px 5px;
+	padding-bottom: 1em;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+	text-indent: 0;
+	font-family: 'batang';
+}
+
+.box_bu2 {
+	padding: 0 0.5em;
+}
+
+.bu_name {
+	font-size: 0.8em;
+	text-indent: 0.5em;
+	margin: 0;
+	margin-top: 0.7em !important;
+	padding: 0.3em 0 0 0 !important;
+}
+
+.bu_name:before {
+	content: 'ARTIST';
+	font-size: 0.7em;
+	color: #ffffff;
+	font-weight: bold;
+	border: 1px solid #ffffff;
+	border-radius: 2em;
+	padding: 0.3em 0.5em;
+	margin-right: 0.5em;
+	background-image: linear-gradient(
+		to right,
+		#A32DF1 5%,
+		#CA9AE9 70%
+	);
+}
+
+/* 왼쪽 말풍선 표 */
+.table_u {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 0.2em 0;
+	font-size: 1em;
+}
+
+.table_u .td_w {
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
+	font-size: 1em;
+}
+
+/* 왼쪽 말풍선 */
+.bg_Ub {
+	display: inline-block;
+	width: auto;
+	max-width: 90%;
+	box-sizing: border-box;
+	font-size: 1em;
+	line-height: 180%;
+	margin: 0.1em 0 !important;
+	padding: 0.35em 0.55em !important;
+	text-indent: 0 !important;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	background-color: #F6E1F1;
+	border: 1px solid #F6E1F1;
+	border-radius: 0 10px 10px 10px;
+}
+
+/* 오른쪽 말풍선 표 */
+.table_m {
+	border-collapse: collapse;
+	margin: 0.2em 0 0.2em auto;
+	font-size: 1em;
+}
+
+.table_m .td_w {
+	width: auto;
+	text-align: left;
+	vertical-align: top;
+	font-size: 1em;
+}
+
+/* 오른쪽 말풍선 */
+.bg_Ib {
+	display: inline-block;
+	width: auto;
+	max-width: 90%;
+	box-sizing: border-box;
+	font-size: 1em;
+	line-height: 180%;
+	margin: 0.1em 0 0.1em 0.2em !important;
+	padding: 0.35em 0.55em !important;
+	text-indent: 0 !important;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	background-color: #d88dff;
+	border: 1px solid #d88dff;
+	border-radius: 10px 10px 0 10px;
+}
+
+/* 안내 문구 */
+.noce {
+	margin: 2em 0;
+	text-align: center;
+	text-indent: 0;
+}
+
+.noce span {
+	display: inline-block;
+	background-color: #f2f3f5;
+	color: #555555;
+	font-size: 0.8em;
+	padding: 0.4em 0.8em;
+	border-radius: 1em;
+}
+
+/* 상단 공지 */
+.top-notice {
+	background-color: #ffffff;
+	border-bottom: 0.06em solid #e0d8a8;
+	padding: 0.6em 0.5em;
+	font-size: 0.9em;
+	text-align: center;
+	text-indent: 0;
+}
+
+/* 표 안쪽 칸 */
+.td_b {
+	width: 15%;
+}
+
+.td_w {
+	width: auto;
+}
